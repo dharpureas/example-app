@@ -1,15 +1,27 @@
 <?php
-function invertedTriangle($rows) {
+
+/**
+ * Generates a simple inverted triangle pattern with asterisks.
+ *
+ * @param int $rows The number of rows in the inverted triangle.
+ */
+function generateInvertedTriangle($rows) {
     for ($i = $rows; $i >= 1; --$i) {
+        // Print asterisks
         for ($j = 1; $j <= $i; ++$j) {
-            echo "* ";
+            echo "*";
         }
+
         echo "\n";
     }
 }
 
 // Example usage
-$rows = 5;
-invertedTriangle($rows);
+$numberOfRows = 5;
+generateInvertedTriangle($numberOfRows);
+
 ?>
+
+
+
 
