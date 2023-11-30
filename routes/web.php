@@ -12,8 +12,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
  */
-use Practicals\Song;
-Route::get('/songs', function () {
+use App\Models\Song;
+Route::get('/songs_static', function () {
   $song1 = new Song();
   $song1->setTitle("Stan");
   $song1->setArtist("Eminem");
@@ -26,6 +26,9 @@ Route::get('/songs', function () {
   $song3->setTitle("With You");
   $song3->setArtist("A P Dhillon");
 
-  return view('songs', [ 'songs' => [ $song1, $song2, $song3 ] ]); 
+  return view('songs_static', [ 'songs_static' => [ $song1, $song2, $song3 ] ]); 
+});
+Route::get('/songs', function () {
+    return view('songs', [ 'songs' => Song::all() ] );
 });
 
