@@ -12,6 +12,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
  */
+// routes/web.php
+
+use App\Http\Controllers\PlaylistController;
+
+Route::get('/playlists/{playlistId}', [PlaylistController::class, 'show']);
+
 use App\Models\Song;
 Route::get('/songs_static', function () {
   $song1 = new Song();
