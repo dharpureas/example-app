@@ -1,72 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify Playlist</title>
-    
-    <link href="{{ asset('css/layouts/main.css') }}" rel="stylesheet" />
+    <title>Playlist Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            grid-gap: 20px;
+            padding: 20px;
+        }
+
+        aside {
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+
+        section {
+            width: 100%;
+        }
+
+        section div {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 5px;
+        }
+
+        section div:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        .b1, .b2{
+            background-color: green;
+            height: 40px;
+            width: 200px;
+            margin: 12px;
+        }
+        .nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+    </style>
 </head>
+
 <body>
-<div id="container">
-        <div id="sidebar">
+    <header class="nav">
+        <h1 class="playlistName">Playlist Name</h1>
+
+        <button class="b1">Edit Playlist</button>
+        <button class="b2">New Playlist</button>
+    </header>
+
+    <main>
+        <aside>
             <h2>Saved Playlists</h2>
             <ul>
-                <li><a href="#">Playlist 1</a></li>
-                <li><a href="#">Playlist 2</a></li>
-                <li><a href="#">Playlist 3</a></li>
+                <li>Playlist 1</li>
+                <li>Playlist 2</li>
+                <li>Playlist 3</li>
             </ul>
-        </div>
-        <div id="main-content">
-            <div id="header">
-                <div>
-                    <h1>Playlist Name</h1>
-                    <p>Playlist by Artist</p>
-                </div>
-                <div>
-                    <a href="#">Edit Playlist</a>
-                    <a href="#">New Playlist</a>
-                </div>
+        </aside>
+
+        <section>
+            <div>
+                <div>Serial No</div>
+                <div>Song Title</div>
+                <div>Artist Name</div>
+                <div>Album Name</div>
+                <div>Duration</div>
             </div>
+            <div>
+                <div>1</div>
+                <div>Song 1</div>
+                <div>Artist 1</div>
+                <div>Album 1</div>
+                <div>3:30</div>
+            </div>
+            <div>
+                <div>2</div>
+                <div>Song 2</div>
+                <div>Artist 2</div>
+                <div>Album 2</div>
+                <div>4:15</div>
+            </div>
+            <!-- Add more rows as needed -->
+        </section>
+    </main>
 
-
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Serial No</th>
-                        <th>Song Title</th>
-                        <th>Artist Name</th>
-                        <th>Album Name</th>
-                        <th>Duration</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($songs as $song)
-	        <tr>
-	        <td>1</td><br>
-	        <td>{{ $song->title() }}</td>
-    	    <td>{{ $song->artist() }}</td><br>
-    	    <td>album1</td><br>
-    	    <td>3:30</td><br>
-   	        </tr>
-	    @endforeach
-                </tbody>
-            </table>
-            <form>
-                <input type="text" placeholder="Playlist Name">
-                <select>
-                    <option value="">Select Song</option>
-                    <option value="song1">Song 1</option>
-                    <option value="song2">Song 2</option>
-                    <!-- Add more options as needed -->
-                </select>
-                <button>Save</button>
-            </form>
-        </div>
-        <div id="footer">
-            <p>&copy; 2023 Your Website | <a href="#">About</a> | <a href="#">Contact</a></p>
-        </div>
-    </div>
+    <footer>
+        <p>&copy; 2023 Playlist App | <a href="#">About</a> | <a href="#">Contact</a></p>
+    </footer>
 </body>
+
 </html>
