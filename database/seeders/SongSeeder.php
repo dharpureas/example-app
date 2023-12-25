@@ -1,10 +1,12 @@
 <?php
 
 namespace Database\Seeders;
-use App\Models\Song;
+
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
+use App\Models\Song;
+ 
+ 
 class SongSeeder extends Seeder
 {
     /**
@@ -12,19 +14,28 @@ class SongSeeder extends Seeder
      */
     public function run(): void
     {
-
         // Seed a few songs
         Song::create([
+            'sr' => '1',
             'artist' => 'Eminem',
-	    'title' => 'Stan',
-	    'updated_at' => now(),
-	    'created_at' => now(),
-	]);
-	Song::create([
+            'title' => 'Stan',
+            'album' => 'The Marshall Mathers LP',
+            'duration' => '6:44',
+        ]);
+
+        Song::create([
+        'sr' => '2',
             'artist' => 'A P Dhillon',
-	    'title' => 'With You',
-	    'updated_at' => now(),
-	    'created_at' => now(),
-	]);
+            'title' => 'With You',
+            'album' => 'The Marshall Mathers LP',
+            'duration' => '6:44',
+        ]);
+        Song::create([
+            'sr' => '3',
+                'artist' => 'Metallica',
+                'title' => 'Nothing Else Matters',
+                'album' => 'The Marshall Mathers LP',
+                'duration' => '3:44',
+            ]);
     }
-    }
+}
