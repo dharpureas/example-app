@@ -26,8 +26,9 @@
             "App\\": "app/",
             "Practicals\\": "practicals/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
-        }
+            "Database\\Seeders\\": "database/seeders/",
+            "Database\\Migrations\\": "database/migrations/"
+	}
     },
     "autoload-dev": {
         "psr-4": {

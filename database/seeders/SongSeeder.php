@@ -16,13 +16,15 @@ class SongSeeder extends Seeder
         // Seed a few songs
         Song::create([
             'artist' => 'Eminem',
-            'title' => 'Stan',
-        ]);
-
-        Song::create([
+	    'title' => 'Stan',
+	    'updated_at' => now(),
+	    'created_at' => now(),
+	]);
+	Song::create([
             'artist' => 'A P Dhillon',
-            'title' => 'With You',
-        ]);
-
+	    'title' => 'With You',
+	    'updated_at' => now(),
+	    'created_at' => now(),
+	]);
     }
     }
